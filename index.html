@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chat</title>
+    <!-- 引入基礎樣式，讓不同瀏覽器看起來一致 -->
+    <link href="./Chat_files/normalize.min.css" rel="stylesheet">
+    <!-- 引入自訂的聊天介面樣式 -->
+    <link href="./Chat_files/style.css" rel="stylesheet">
+    <style>
+        html,
+        body,
+        #n8n-chat {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- JavaScript 掛載區塊，使用 type="module" 可直接匯入現代 JS 模組 -->
+    <n8nchatui-inpage></n8nchatui-inpage>
+    <script type="module" defer>
+  import Chatbot from "https://cdn.n8nchatui.com/v1/embed.js";
+  Chatbot.initFull({
+    "n8nChatUrl": "https://bot.smartchat.live/webhook/80542fdd-35c8-4811-b114-07b52491639c/chat",
+    "metadata": {}, // Include any custom data to send with each message to your n8n workflow
+    "theme": {
+      "button": {
+        "iconColor": "#373434",
+        "backgroundColor": "#fb83ad"
+      },
+      "chatWindow": {
+        "borderRadiusStyle": "rounded",
+        "avatarBorderRadius": 25,
+        "messageBorderRadius": 6,
+        "showTitle": true,
+        "title": "睿澤MV香水包裝查詢系統",
+        "titleAvatarSrc": "https://raw.githubusercontent.com/barry1314/aromate/refs/heads/main/photo/logo21.jpg",
+        "avatarSize": 40,
+        "welcomeMessage": "歡迎來到睿澤MV香水包裝查詢系統，有任何包裝方式的問題都可以問我喔~~",
+        "errorMessage": "系統出了一些狀況，請盡速聯絡相關技術人員。",
+        "backgroundColor": "#ffffff",
+        "height": 0,
+        "width": 0,
+        "fontSize": 16,
+        "starterPromptFontSize": 60,
+        "renderHTML": false,
+        "clearChatOnReload": false,
+        "showScrollbar": false,
+        "botMessage": {
+          "backgroundColor": "#fb83ad",
+          "textColor": "#fafafa",
+          "showAvatar": true,
+          "avatarSrc": "https://raw.githubusercontent.com/barry1314/aromate/refs/heads/main/photo/Elf.png"
+        },
+        "userMessage": {
+          "backgroundColor": "#ff4d8b",
+          "textColor": "#050505",
+          "showAvatar": true,
+          "avatarSrc": "https://raw.githubusercontent.com/barry1314/aromate/refs/heads/main/photo/user.png"
+        },
+        "textInput": {
+          "placeholder": "Type your questions!",
+          "backgroundColor": "#ffffff",
+          "textColor": "#1e1e1f",
+          "sendButtonColor": "#fb83ad",
+          "maxChars": 50,
+          "maxCharsWarningMessage": "You exceeded the characters limit. Please input less than 50 characters.",
+          "autoFocus": false,
+          "borderRadius": 6,
+          "sendButtonBorderRadius": 50
+        }
+      }
+    }
+    });
+  </script>
+
+    <!-- 聊天視窗的根節點，聊天元件會自動渲染進來 -->
+    <div id="n8n-chat" data-v-app=""></div>
+</body>
+
+</html>
